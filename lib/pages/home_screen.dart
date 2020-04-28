@@ -35,24 +35,31 @@ class HomeScreen extends StatelessWidget {
           padding: EdgeInsets.zero,
           children: <Widget>[
             DrawerHeader(
-              child: Text('种族分类'),
+              child: Text(''),
               decoration: BoxDecoration(
-                color: Colors.blue,
+                //color: Colors.blue,
+                image: DecorationImage(
+                  image: AssetImage("lib/images/background.jpg"),
+                  fit: BoxFit.fill
+                ),
               ),
             ),
             ListTile(
               title: Text('人族', textAlign: TextAlign.left),
-              trailing: Icon(Icons.settings, color: Colors.black12, size: 22.0),
+              //trailing: Icon(Icons.settings, color: Colors.black12, size: 22.0),
+              trailing: Image.asset("lib/images/Terran.jpg"),
               onTap: () => Navigator.pop(context)
             ),
             ListTile(
               title: Text('神族', textAlign: TextAlign.left),
-              trailing: Icon(Icons.settings, color: Colors.black12, size: 22.0),
+              //trailing: Icon(Icons.settings, color: Colors.black12, size: 22.0),
+              trailing: Image.asset("lib/images/Protoss.jpg"),
               onTap: () => Navigator.pop(context)
             ),
             ListTile(
               title: Text('虫族', textAlign: TextAlign.left),
-              trailing: Icon(Icons.settings, color: Colors.black12, size: 22.0),
+              //trailing: Icon(Icons.settings, color: Colors.black12, size: 22.0),
+              trailing: Image.asset("lib/images/Zerg.jpg"),
               onTap: () => Navigator.pop(context)
             ),
           ],
@@ -62,7 +69,5 @@ class HomeScreen extends StatelessWidget {
         child:Text('主页')
       ),
     );
-  }
-
-  
+  }  
 }

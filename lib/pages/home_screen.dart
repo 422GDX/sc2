@@ -6,8 +6,31 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
+    return Scaffold(      
+      appBar: MyAppBar(),   //自定义上方AppBar
+      drawer: MyDrawer(),   //自定义左侧隐藏导航栏
+      body: Center(
+        child:Text('主页')
+      ),
+    );
+  }  
+}
+//自定义上方AppBar
+class MyAppBar extends StatefulWidget implements PreferredSizeWidget{
+  MyAppBar({Key key}) : super(key: key);
+
+  @override
+  _MyAppBarState createState() => _MyAppBarState();
+
+  @override
+  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+}
+
+class _MyAppBarState extends State<MyAppBar> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+       child: AppBar(
         title:Text('主页'),
         /*
         leading: IconButton(
@@ -29,8 +52,23 @@ class HomeScreen extends StatelessWidget {
           )
         ],
       ),
-      //左侧隐藏导航栏
-      drawer: Drawer(
+    );
+  }
+}
+
+//自定义左侧隐藏导航栏
+class MyDrawer extends StatefulWidget {
+  const MyDrawer({Key key}) : super(key: key);
+
+  @override
+  _MyDrawerState createState() => _MyDrawerState();
+}
+
+class _MyDrawerState extends State<MyDrawer> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
@@ -65,9 +103,7 @@ class HomeScreen extends StatelessWidget {
           ],
         )
       ),
-      body: Center(
-        child:Text('主页')
-      ),
+
     );
-  }  
+  }
 }
